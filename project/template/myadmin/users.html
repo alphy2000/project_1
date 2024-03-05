@@ -1,0 +1,44 @@
+{% extends 'myadmin/adbase.html' %}
+
+
+{% block content %}
+{%load static%}
+
+  <body id="reportsPage">
+  
+          <div class="container">
+          <div class="tm-bg-primary-dark tm-block tm-block-products">
+            <div class="tm-product-table-container">
+              <table class="table table-hover tm-table-small tm-product-table" style="background-color: white;">
+                <thead>
+                  <tr>
+                    <th scope="col">NAME</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">PHONE</th>
+                    <th scope="col">USERNAME</th>
+                    
+                  </tr> 
+                </thead>
+                <tbody>
+                  {% for i in obj %}
+                  <tr>
+                    <td class="tm-product-name">{{i.name}}</td>
+                    <td class="tm-product-name">{{i.email}}</td>
+                    <td class="tm-product-name">{{i.phone}}</td>
+                    <td class="tm-product-name">{{i.username}}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+           
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+  </body>
+</html>
+
+{% endblock %}

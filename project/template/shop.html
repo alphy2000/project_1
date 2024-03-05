@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{%block nav%}
+                   <li><a href="{% url 'index'%}">Home</a></li>
+                    <li class="active"><a href="{% url 'shop'%}">Store</a></li>
+                    <!-- <li class="has-children">
+                      <a href="#">Dropdown</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Supplements</a></li>
+                        <li class="has-children">
+                          <a href="#">Vitamins</a>
+                          <ul class="dropdown">
+                            <li><a href="#">Supplements</a></li>
+                            <li><a href="#">Vitamins</a></li>
+                            <li><a href="#">Diet &amp; Nutrition</a></li>
+                            <li><a href="#">Tea &amp; Coffee</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Diet &amp; Nutrition</a></li>
+                        <li><a href="#">Tea &amp; Coffee</a></li>
+                        
+                      </ul>
+                    </li> -->
+                    <li><a href="{% url 'about'%}">About</a></li>
+                    <li><a href="{% url 'contact'%}">Contact</a></li>
+{%endblock%}
+
+
+{% block content %}
+{%load static%}
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="{% url 'index'%}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="title-section text-center col-12">
+            <h2 class="text-uppercase" style="color: rgba(81, 234, 234, 0.9);">Shop by category</h2>
+          </div>
+        </div>
+
+    
+        <div class="row">
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            
+            <a href="{% url 'medicines'%}"> <img src="{% static 'images/medicines.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'medicines'%}">All</a></h3>
+            
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            <a href="{% url 'diabetes'%}"> <img src="{% static 'images/diabetescare.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'diabetes'%}">Diabetes care</a></h3>
+            
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            <a href="{% url 'health'%}"> <img src="{% static 'images/healthcare.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'health'%}">Healthcare devices</a></h3>
+            
+          </div>
+    
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+    
+            <a href="{% url 'pain'%}"> <img src="{% static 'images/painrelief.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'pain'%}">Pain relief</a></h3>
+            
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            <a href="{% url 'ayurveda'%}"> <img src="{% static 'images/ayurveda.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'ayurveda'%}">Ayurveda</a></h3>
+            
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            
+            <a href="{% url 'homeo'%}"> <img src="{% static 'images/homeopathy.jpg'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'homeo'%}">Homeopathy</a></h3>
+           
+          </div>
+
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            <a href="{% url 'derma'%}"> <img src="{% static 'images/dermacare.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'derma'%}">Dermacare</a></h3>
+            
+          </div>
+          
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+          
+            <a href="{% url 'oral'%}"> <img src="{% static 'images/oralcare.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'oral'%}">Oralcare</a></h3>
+            
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            <a href="{% url 'baby'%}"> <img src="{% static 'images/babycare.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'baby'%}">Baby care</a></h3>
+            
+          </div>
+        
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            
+            <a href="{% url 'vitamins'%}"> <img src="{% static 'images/vitamins.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'vitamins'%}">Vitamins & Minerals</a></h3>
+            
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            <a href="{% url 'sports'%}"> <img src="{% static 'images/sports.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'sports'%}">Sports Nutrition</a></h3>
+            
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            
+            <a href="{% url 'family'%}"> <img src="{% static 'images/family.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'family'%}">Family Nutrition</a></h3>
+            
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center item mb-4">
+            
+            <a href="{% url 'supports'%}"> <img src="{% static 'images/supports.png'%}" alt="Image" style="height: 150px; width: 150px; margin-top: 20px; margin-bottom: 10px; border: solid 2px rgba(81, 234, 234, 0.9); border-radius: 80%;"></a>
+            <h3 class="text-dark"><a href="{% url 'supports'%}">Body supports</a></h3>
+            
+          </div>
+        
+        </div>
+        
+      </div>
+    </div>
+
+    
+    
+    {% endblock %}
+
+    

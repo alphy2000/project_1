@@ -1,0 +1,76 @@
+{% extends 'myadmin/adbase.html' %}
+
+
+{% block content %}
+{%load static%}
+
+
+
+
+  <body id="reportsPage">
+    
+    <!-- <div class="container mt-5"> -->
+      <!-- <div class="row tm-content-row"> -->
+        <!-- <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col"> -->
+          <div class="container">
+          <div class="tm-bg-primary-dark tm-block tm-block-products">
+            <div class="tm-product-table-container">
+              <table class="table table-hover tm-table-small tm-product-table" style="background-color: white;">
+                <thead>
+                  <tr>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">PRODUCT </th>
+                    <th scope="col">PRICE</th>
+                    <!-- <th scope="col">IN STOCK</th> -->
+                    <!-- <th scope="col">EXPIRE DATE</th> -->
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in obj %}
+                  <tr>
+                    <!-- <th scope="row"><input type="checkbox" /></th> -->
+                    <td><img src="{{i.image.url}}" alt="img" style="height: 80px; width: 50px;"></td>
+                    <td class="tm-product-name">{{i.name}}</td>
+                    <td>{{i.discount}}</td>
+                    <!-- <td>1</td> -->
+                    <!--  <td>28 March 2019</td> -->
+                      <!-- <td>
+                        <a href="editproduct/{{i.id}}" class="tm-product-delete-link" style="color: white;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                          </svg>
+                        </a>
+                      </td> -->
+                      <td>
+                        <a href="adsingle/{{i.id}}" style="background-color: white; color: black;">View Product</a>
+                      </td>
+
+                    <!-- <td>
+                      <a href="deleteproduct/{{i.id}}" class="tm-product-delete-link">
+                        <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                      </a>
+                    </td> -->
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <!-- table container -->
+            <a
+              href="addproduct"
+              class="btn btn-primary btn-block text-uppercase mb-3 mt-5">Add new product</a>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+  </body>
+
+</html>
+
+{% endblock %}

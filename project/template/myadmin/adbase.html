@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>Pharma &mdash; Colorlib Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css'%}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css'%}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}">
+
+  <link rel="stylesheet" href="{% static 'css/uprofile.css'%}">
+  <script src="{% static 'js/uprofile.js'%}"></script>
+
+
+  <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+    />
+    <!-- https://fonts.google.com/specimen/Roboto -->
+    <link rel="stylesheet" href="{% static 'admin/css/fontawesome.min.css' %}" />
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="{% static 'admin/css/bootstrap.min.css' %}" />
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="{% static 'admin/css/templatemo-style.css' %}">
+    <!--
+	Product Admin CSS Template
+	https://templatemo.com/tm-524-product-admin
+	-->
+
+
+  {% block head1 %}
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+  {% endblock %}
+
+
+  <link rel="stylesheet" href="{% static 'css/aos.css'%}">
+
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+
+
+    <div class="site-wrap">
+
+
+        <div class="site-navbar py-2">
+    
+          <div class="search-wrap">
+            <div class="container">
+              <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+              <form action="#" method="post">
+                <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+              </form>
+            </div>
+          </div>
+    
+          <div class="container">
+
+            
+            <div class="d-flex align-items-center justify-content-between">
+
+
+
+              <div class="logo">
+                <div class="site-logo">
+                  
+                  <a href="{% url 'index'%}" class="js-logo-clone">Pharma</a>
+                </div>
+              </div>
+              <div class="main-nav d-none d-lg-block">
+                <nav class="site-navigation text-right text-md-center" role="navigation">
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    {%block nav%}
+                    <li><a href="{% url 'admini' %}">Home</a></li>
+                    <li><a href="{% url 'adminpro'%}">Products</a></li>
+                    <!-- <li class="has-children">
+                      <a href="{% url 'shop'%}">Users</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Diabetes</a></li>
+                        <li class="has-children">
+                          <a href="#">Vitamins</a>
+                          <ul class="dropdown">
+                            <li><a href="#">Supplements</a></li>
+                            <li><a href="#">Vitamins</a></li>
+                            <li><a href="#">Diet &amp; Nutrition</a></li>
+                            <li><a href="#">Tea &amp; Coffee</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Diet &amp; Nutrition</a></li>
+                        <li><a href="#">Tea &amp; Coffee</a></li>
+                        
+                      </ul>
+                    </li> -->
+                    <li><a href="{% url 'userss'%}">Users</a></li>
+                    <li><a href="{% url 'messages'%}">Messages</a></li>
+                    <li><a href="{% url 'userbookings'%}">User Bookings</a></li>
+                    {%endblock%}
+                  </ul>
+                </nav>
+              </div>
+              <div class="icons">
+                <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+
+                
+                <!-- {% if request.session.id %}
+
+                <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+                <a href="{% url 'cartt'%}" class="icons-btn d-inline-block bag"> 
+                  <span class="icon-shopping-cart"></span>
+                  <span class="number">{{cnt}}</span>
+                </a>
+                
+                <a href="{% url 'logout'%}" > 
+                  {% for i in request.session.id %}
+                 <span>{{usr.name}}logout</span>
+                   {% endfor %}          
+                 </a>
+
+
+                 
+                
+              {% else %}
+
+              <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+              <a href="{% url 'cartt'%}" class="icons-btn d-inline-block bag"> 
+                <span class="icon-shopping-cart"></span>
+              </a>
+
+               <a href="{% url 'login'%}" > 
+               <span>Login/Signup</span>
+                             
+             </a>
+                            
+              {% endif %} -->
+ 
+
+
+                <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
+                    class="icon-menu"></span></a>
+              </div>
+
+              
+              <!--  -->
+              
+              
+             <div id="mainn">
+                <span style="font-size: 20px; cursor: pointer" onclick="openNav()">👤Admin</span>
+             </div>
+              <!--  -->
+              <a href="{% url 'logout'%}" > 
+                 
+                <span>LOGOUT</span>
+                
+                </a>
+
+
+            </div>
+
+            
+
+          </div>
+        </div>
+
+        <!-- index page contents starts -->
+    
+        {% block content %}
+
+    {% endblock %}
+
+
+        <!-- index page contents ends -->
+
+        <!-- <div class="site-section bg-secondary bg-image" style="background-image: url('static/images/bg_2.jpg');">
+          <div class="container">
+            <div class="row align-items-stretch">
+              <div class="col-lg-6 mb-5 mb-lg-0">
+                <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('static/images/bg_1.jpg');">
+                  <div class="banner-1-inner align-self-center">
+                    <h2>Pharma Products</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex ad minus rem odio voluptatem.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-6 mb-5 mb-lg-0">
+                <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('static/images/bg_2.jpg');">
+                  <div class="banner-1-inner ml-auto  align-self-center">
+                    <h2>Rated by Experts</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae ex ad minus rem odio voluptatem.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+    
+        <!-- <footer class="site-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+    
+                <div class="block-7">
+                  <h3 class="footer-heading mb-4">About Us</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quae reiciendis distinctio voluptates
+                    sed dolorum excepturi iure eaque, aut unde.</p>
+                </div>
+    
+              </div>
+              <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+                <h3 class="footer-heading mb-4">Quick Links</h3>
+                <ul class="list-unstyled">
+                  <li><a href="#">Supplements</a></li>
+                  <li><a href="#">Vitamins</a></li>
+                  <li><a href="#">Diet &amp; Nutrition</a></li>
+                  <li><a href="#">Tea &amp; Coffee</a></li>
+                </ul>
+              </div>
+    
+              <div class="col-md-6 col-lg-3">
+                <div class="block-5 mb-5">
+                  <h3 class="footer-heading mb-4">Contact Info</h3>
+                  <ul class="list-unstyled">
+                    <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
+                    <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
+                    <li class="email">emailaddress@domain.com</li>
+                  </ul>
+                </div>
+    
+    
+              </div>
+            </div>
+            
+          </div>
+        </footer> -->
+    </div>
+    
+      <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+      <script src="{% static 'js/jquery-ui.js'%}"></script>
+      <script src="{% static 'js/popper.min.js'%}"></script>
+      <script src="{% static 'js/bootstrap.min.js'%}"></script>
+      <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+      <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+      <script src="{% static 'js/aos.js'%}"></script>
+    
+      <script src="{% static 'js/main.js'%}"></script>
+    
+    
+      <script src="{% static 'admin/js/jquery-3.3.1.min.js' %}"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="{% static 'admin/js/bootstrap.min.js' %}"></script>
+    <!-- https://getbootstrap.com/ -->
+    <!-- <script>
+      $(function() {
+        $(".tm-product-name").on("click", function() {
+          window.location.href = "single/{{i.id}}";
+        });
+      });
+    </script> -->
+
+   
+
+
+
+</body>
+</html>

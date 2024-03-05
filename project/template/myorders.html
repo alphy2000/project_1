@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{%load static%}
+
+
+                <div class="col-12 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                        <h2 class="tm-block-title">Orders List</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">USERNAME</th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col">EMAIL</th>
+                                    <th scope="col">LOCATION</th>
+                                    <th scope="col">AMOUNT</th>
+                                    <th scope="col">PAYMENT MODE</th>
+                                    <th scope="col">DATE</th>
+                                    <th scope="col">TRACKING NO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in l %}
+                                <tr>
+                                    <th scope="row"><b>{{i.user.username}}</b></th>
+                                    <td>
+                                        <div class="tm-status-circle moving">
+                                        </div>Moving
+                                    </td>
+                                    <td><b>{{i.email}}</b></td>
+                                    <td><b>{{i.city}}</b></td>
+                                    <td><b>{{i.total_price}}</b></td>
+                                    <td><b>{{i.payment_mode}}</b></td>
+                                    <td>{{i.created_at}}</td>
+                                    <td>{{i.tracking_no}}</td>
+                                </tr>
+                                {% endfor %}
+
+                                <!-- <td>
+                                    <div class="tm-status-circle moving">
+                                    </div>Moving
+                                </td>
+
+                                <td>
+                                    <div class="tm-status-circle pending">
+                                    </div>Pending
+                                </td>
+
+                                <td>
+                                    <div class="tm-status-circle cancelled">
+                                    </div>Cancelled
+                                </td> -->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+    
+                
+{% endblock %}
+

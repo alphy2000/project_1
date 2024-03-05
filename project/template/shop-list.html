@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{%load static%}
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="{% url 'index'%}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        
+        <!-- <div class="row">
+          <div class="col-lg-6">
+            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
+            <div id="slider-range" class="border-primary"></div>
+            <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
+          </div>
+          <div class="col-lg-6">
+            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Reference</h3>
+            <button type="button" class="btn btn-secondary btn-md dropdown-toggle px-4" id="dropdownMenuReference"
+              data-toggle="dropdown">Reference</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+              <a class="dropdown-item" href="#">Relevance</a>
+              <a class="dropdown-item" href="#">Name, A to Z</a>
+              <a class="dropdown-item" href="#">Name, Z to A</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Price, low to high</a>
+              <a class="dropdown-item" href="#">Price, high to low</a>
+            </div>
+          </div>
+        </div> -->
+        
+        <div class="row">
+          {% for i in l %}
+
+          <div class="col-sm-6 col-lg-6 text-center item mb-4">
+            <span class="tag">Sale</span>
+            <a href="single/{{i.id}}"> <img src="{{i.image.url}}" alt="Image" style="height: 250px; width: 150px; margin-left: 100px; margin-right: 100px; margin-top: 70px;"></a>
+            <h3 class="text-dark" style="margin-left: 100px; margin-right: 100px;"><a href="single/{{i.id}}">{{i.name}}</a></h3>
+            <p class="price"><del>₹{{i.price}}</del> &mdash; ₹{{i.discount}}</p>
+
+            <!-- {% if request.session.id %}
+           
+
+            <form action="single/addcart/{{i.id}}" method="post">
+              {% csrf_token %}
+             <input type="submit" value="Add to cart" style="background-color: #51eaea; color: black; padding: 10px;">      
+            </form>
+            
+            {% else %}
+            <a class="cart" href="{% url 'cartt'%}" style="background-color: #51eaea; color: black; padding: 10px; border: 2px solid black;">Add to Cart</a>
+
+            {% endif %} -->
+
+            <p>
+              {% if i.id in g %}
+              <a class="cart" href="{% url 'cartt'%}" style="background-color: #51eaea; color: black; padding: 10px;">Go  To Cart</a>
+
+           
+            {% else %}
+            <form action="single/addcart/{{i.id}}" method="post">
+              {% csrf_token %}
+             <input type="submit" value="Add to cart" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">      
+            </form>
+            {% endif %}
+          </p>
+
+          </div>
+          {% endfor %}
+        </div>
+       
+
+        <!-- <div class="row mt-5">
+          <div class="col-md-12 text-center">
+            <div class="site-block-27">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    {% endblock %}

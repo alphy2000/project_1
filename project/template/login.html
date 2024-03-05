@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block head1 %}
+{%load static%}
+
+<link rel="stylesheet" href="{% static 'css/login.css'%}">
+<script src="{% static 'js/login.js'%}"></script>
+
+{% endblock %}
+
+
+{%block nav%}
+                   <li><a href="{% url 'index'%}">Home</a></li>
+                    <li><a href="{% url 'shop'%}">Store</a></li>
+                    <!-- <li class="has-children">
+                      <a href="#">Dropdown</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Supplements</a></li>
+                        <li class="has-children">
+                          <a href="#">Vitamins</a>
+                          <ul class="dropdown">
+                            <li><a href="#">Supplements</a></li>
+                            <li><a href="#">Vitamins</a></li>
+                            <li><a href="#">Diet &amp; Nutrition</a></li>
+                            <li><a href="#">Tea &amp; Coffee</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Diet &amp; Nutrition</a></li>
+                        <li><a href="#">Tea &amp; Coffee</a></li>
+                        
+                      </ul>
+                    </li> -->
+                    <li><a href="{% url 'about'%}">About</a></li>
+                    <li><a href="{% url 'contact'%}">Contact</a></li>
+{%endblock%}
+
+{% block content %}
+{%load static%}
+
+
+
+
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			
+			<div class="sign-in-htm">
+				<form action="login" method="post">
+					{% csrf_token %}
+
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input" name="username">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" name="password">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				
+				{% for msg in messages %}
+				{% if 'login' in msg.tags %}
+				<div class="group" style="text-align: center;">
+					<label for="pass" class="label" style="color: red;">{{msg}}</label>
+				</div>
+				{% endif %}
+				{% endfor %}
+				
+
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+			</form>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="{% url 'forgot' %}">Forgot Password?</a>
+				</div>
+			</div>
+		
+		
+			<div class="sign-up-htm">
+
+				<form action="signup" method="post">
+					{% csrf_token %}
+
+				<div class="group">
+					<label for="user" class="label">Name</label>
+					<input id="user" type="text" class="input" name="name">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="text" class="input" name="email">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Phone</label>
+					<input id="pass" type="text" class="input" name="phone">
+				</div>
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input" name="username">
+				</div>
+				
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" name="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" type="password" class="input" data-type="password" name="repassword">
+				</div>
+				{% for msg in messages %}
+				{% if 'signup' in msg.tags %}
+				<div class="group" style="text-align: center;">
+					<label for="pass" class="label" style="color: red;">{{msg}}</label>
+				</div>
+				{% endif %}
+				{% endfor %}
+				
+				<div class="group">
+					<input type="submit" class="button" value="Sign Up">
+				</div>
+			</form>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href=""><label for="tab-1">Already Member?</a>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+{% endblock %}
